@@ -60,6 +60,41 @@ VITE_BASE_API_URL=https://example.com/api
 
 Полный запуск frontend вместе с backend, PostgreSQL и Redis описан в [README общего репозитория](https://github.com/NikName2021/GoOffer_HackathonAvito#readme).
 
+## Структура проекта
+
+```text
+.
+├── public/                         # favicon, JSON-примеры, изображения документации
+├── scripts/                        # запуск Playwright и генерация тестовых JSON
+├── src/
+│   ├── api/                        # Axios-клиент и запросы к backend API
+│   ├── assets/                     # локальные изображения и fallback-ресурсы
+│   ├── components/
+│   │   ├── admin/                  # настройка дополнительных recap-карточек
+│   │   ├── auth/                   # вход, регистрация и панель аккаунта
+│   │   ├── avitoStatic/            # адаптивная статичная имитация страницы сервиса
+│   │   ├── documentation/          # раздел документации внутри приложения
+│   │   ├── profileCards/            # карточки профилей, CRUD и JSON-импорт
+│   │   ├── recap/                  # сценарий итогов, графики, sharing и миссии
+│   │   ├── sidebar/                # навигация и текущий пользователь
+│   │   └── ui/                     # базовые UI-компоненты shadcn
+│   ├── config/                     # общие настройки, включая пути
+│   ├── constants/                  # константы интерфейса и демонстрационные данные
+│   ├── hooks/                      # React Query-хуки для профилей, recap и миссий
+│   ├── pages/                      # Home, Avito, Documentation и RecapSettings
+│   ├── routes/                     # маршрутизация и защита admin-маршрута
+│   ├── store/                      # Redux-состояние авторизации и localStorage
+│   ├── types/                      # TypeScript-типы API и доменных сущностей
+│   └── utils/                      # форматирование, CTA, sharing и вспомогательная логика
+├── tests/
+│   ├── unit/                       # Jest unit-тесты
+│   └── e2e/                        # Playwright-сценарии пользовательских потоков
+├── Dockerfile                      # production-сборка frontend
+├── vite.config.ts                  # конфигурация Vite
+├── playwright.config.ts             # конфигурация E2E-тестов
+└── package.json                     # зависимости и npm-скрипты
+```
+
 ## Проверки
 
 ```bash
